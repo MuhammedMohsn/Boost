@@ -1,0 +1,169 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.footer_section {
+  height: 500px;
+  background-color: $black_color !important;
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    .footer {
+      height: 100%;
+      .content_with_social_icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .footer_content {
+          width: 47%;
+          p {
+            width: 100%;
+            font-size: large;
+            color: $gray_color;
+          }
+          .booth {
+            color: $gray_color !important;
+            font-size: xx-large;
+            a {
+              text-decoration: none;
+              color: $gray_color !important;
+              &:hover {
+                color: $white_color !important;
+                font-weight: bolder;
+              }
+            }
+          }
+          .social_icons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+            .facebook_icon,
+            .instgram_icon,
+            .twitter_icon {
+              height: 40px;
+              width: 40px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $gray_color;
+              margin-right: 30px;
+              cursor: pointer;
+              i {
+                color: $white_color !important;
+              }
+            }
+            .facebook_icon:hover,
+            .instgram_icon:hover,
+            .twitter_icon:hover {
+              background-color: $black_color !important;
+            }
+          }
+        }
+      }
+      .links_with_support {
+        width: 47%;
+        p {
+          color: $gray_color;
+        }
+        .email {
+          margin-bottom: 10px ;
+          a {
+            color: $green_color !important;
+            font-size: xx-large;
+            text-decoration: none;
+          }
+        }
+        .rights {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: row;
+          flex-wrap: wrap;
+          color: $green_color;
+          .StyleShout {
+            color: $green_color;
+            font-size: medium;
+            font-weight: bolder;
+            cursor: pointer;
+          }
+        }
+
+        ul {
+          list-style: none;
+          display: flex;
+          padding: 0;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          height: 100%;
+          margin-bottom: 10px;
+          li {
+            height: 100%;
+            a {
+              text-decoration: none;
+              color: $white_color !important;
+              font-size: large;
+              height: 100% !important;
+              &:hover {
+                color: $green_color !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints(medium) {
+  .footer_section {
+    height: fit-content;
+    .container {
+      .footer {
+        .content_with_social_icons {
+          .footer_content {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+          .links_with_support {
+            width: 100%;
+            ul {
+              li {
+                width: 25%;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(small) {
+    .footer_section {
+      height: fit-content;
+      .container {
+        .footer {
+          .content_with_social_icons {
+            .footer_content {
+              width: 100%;
+              margin-bottom: 30px;
+            }
+            .links_with_support {
+              width: 100%;
+              ul {
+                li {
+                  width: 25%;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

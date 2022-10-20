@@ -1,0 +1,85 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.stats_section {
+  height: fit-content;
+  background-color: $gray_color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    background-color: rgb(88, 88, 88);
+    .stats {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-top: 10px;
+      background-color: rgba(255, 255, 255, 0.863) !important;
+      .stat {
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        div {
+          padding-top: 15px;
+          .num {
+            color: rgb(5, 114, 5);
+            font-size: xx-large;
+          }
+          .k {
+            color: rgb(5, 114, 5);
+            font-size: x-large;
+          }
+        }
+        p {
+          color: $gray_color;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints(large) {
+  .stats_section {
+    .container {
+      .stats {
+        .stat {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .stats_section {
+    height: fit-content;
+    .container {
+      .stats {
+        .stat {
+          width: 48%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints(small) {
+  .stats_section {
+    height: fit-content;
+    .container {
+      .stats {
+        .stat {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

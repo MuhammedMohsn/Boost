@@ -1,0 +1,86 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+.features_section {
+    height: 700px;
+    background-color:$gray_color;
+    .container{
+        margin: 0 auto;
+        width: 85%;
+        height: 100%;
+        .features {
+            height: 100%;
+            .feature_header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+                .feature_title {
+                    color: $black_color !important;
+                    font-weight: bolder;
+                    width: 48%;
+                }
+                p {
+                    color: $gray_color;
+                    line-height: 1.7;
+                    width: 45% !important;
+                    font-size: large !important;
+                }
+            }
+            .features_content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .feature {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 31.6%;
+                    margin-bottom: 10px;
+                    div {
+                        color: $black_color !important;
+                        font-size: large !important
+                    }
+                    .icon {
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 50%;
+                        background-color: $gray_color;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 8px;
+                        i {color: $green_color ;}}}} }}}
+@include breakpoints(small) {
+    .features_section {
+        height: fit-content;
+        .container{
+            .features{
+                .feature_header{
+                    .feature_title {
+                        color: $black_color !important;
+                        font-weight: bolder;
+                        width: 100% ;}
+                    p{color:$gray_color;
+                        line-height: 1.7;
+                        width: 100% !important;
+                        font-size: large !important;}}
+                .features_content{
+                    .feature {width: 100%;} }} } }}
+
+@include breakpoints(medium) {
+    .features_section {
+        height: fit-content;
+        .container{
+            .features{
+                .feature_header{
+                    .feature_title { width: 100%;}
+                     p {width: 100% !important;}}
+                .features_content{
+                    .feature {width: 48%;}}}}
+    }}
+

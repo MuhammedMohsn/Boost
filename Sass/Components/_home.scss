@@ -1,0 +1,163 @@
+@use "../variables" as *;
+@use '../mixins' as *;
+.home_section {
+  height: fit-content;
+  background-image: url("../imgs/hero-bg-3000.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      margin-top: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+      .nav_logo {
+        color: $white_color !important;
+        font-weight: bolder;
+        font-size: xx-large;
+        cursor: pointer;
+      }
+      ul {
+        margin-right: 20px;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 300px;
+        margin-right: 120px !important;
+        li {
+          height: 100%;
+          margin-right: 5px;
+          a {
+            height: 100%;
+            text-decoration: none;
+            color: $white_color !important;
+            font-weight: bolder;
+            font-size: large;
+          }
+        }
+      }
+      .get_the_app {
+        background-color: transparent;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid $white_color;
+        border-radius: 10px;
+        color: $white_color !important;
+        font-weight: bolder;
+        &:hover {
+          background-color: $black_color !important;
+        }
+      }
+      .toggle_btn {
+        display: none;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+      }
+      
+    }
+    .home {
+      align-self: flex-end !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row;
+      height: 600px;
+      width: 100%;
+      .home_title {
+        width: 40%;
+        font-weight: bolder;
+        color: $white_color !important;
+      }
+      .home_text {
+        width: 45%;
+        .text {
+          color: $white_color;
+          line-height: 1.7;
+          font-size: large;
+        }
+        .btns_1 {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          .get_started {
+            width: 140px;
+            height: 50px;
+            background-color: $green_color;
+            color: $white_color !important;
+            text-align: center;
+            margin-right: 40px;
+            outline: none;
+            border-radius: 10px;
+            bottom: none;
+            transition: all 0.4s;
+            &:hover {
+              background-color: rgb(4, 92, 4);
+            }
+          }
+          .play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            outline: none;
+            border: none;
+            transition: all 0.4s;
+            &:hover {
+              background-color: $green_color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(small) {
+  .home_section {
+    .container {
+      nav {ul { display: none;}
+        .toggle_btn {display: block;}
+        .get_the_app {display: none;}
+      }
+    }
+  }
+}
+@include breakpoints() {
+  .home {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    .home_title {width: 100% !important;}
+    .home_text {width: 100% !important;}
+  }
+}

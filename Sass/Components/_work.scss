@@ -1,0 +1,106 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.how_the_app_works_section {
+  height: 600px;
+  margin-top: 5px;
+  background-color: $gray_color;
+  padding-top: 20px;
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    .how_works {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      height: 85%;
+      .steps {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .step {
+          counter-increment: medo !important;
+          position: relative;
+          padding-left: 60px;
+          margin-bottom: 10px;
+          width: 100%;
+          height: 22%;
+          line-height: 1.6;
+          font-size: large;
+          &:before {
+            content: counter(medo);
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            text-align: center;
+            color: $black_color !important;
+            background-color: $green_color;
+            position: absolute;
+            top: 8px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .screen_pic {
+        height: 100%;
+        width: 30%;
+      }
+    }
+  }
+}
+@include breakpoints(small){
+    .how_the_app_works_section{
+        height: fit-content;
+        .container{
+            .how_works{
+                .steps{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                .screen_pic{
+                    width: 50%;
+                    margin: 0 auto;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+@include breakpoints(medium){
+    .how_the_app_works_section{
+        height: fit-content;
+        .container{
+            .how_works{
+                .steps{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                .screen_pic{
+                    width: 50%;
+                    margin: 0 auto;
+                    height: 100%;            
+                }
+            }
+        }
+    }
+}
+@include breakpoints(large){
+    .how_the_app_works_section{
+        height: fit-content;
+        .container{
+            .how_works{
+                .steps{width: 60%;margin-bottom: 20px;}
+                .screen_pic{ width: 30%; height: 100%;}
+            }
+        }
+    }
+}

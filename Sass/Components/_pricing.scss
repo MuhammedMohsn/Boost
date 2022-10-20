@@ -1,0 +1,181 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.price_section {
+  height: 500px;
+  padding-top: 30px;
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    .price {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .price_content {
+        width: 31% !important;
+        height: 100%;
+        p {
+          line-height: 1.7;
+          font-size: large;
+        }
+        h2 {
+          color: $black_color !important;
+          font-weight: bolder;
+        }
+      }
+      .price_box {
+        background-color: rgb(4, 85, 4);
+        height: 100%;
+        padding-left: 40px;
+        width: 31% !important;
+        padding-top: 20px;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        .price_button {
+          background-color: $white_color !important;
+          color: $black_color !important;
+          border-radius: 6px;
+          width: 80%;
+          height: 60px;
+          cursor: pointer;
+          margin: 0px auto !important;
+          text-align: center;
+          transition: all 0.5s;
+          font-size: large !important;
+          &:hover {
+            background-color: $green_color !important;
+          }
+        }
+
+        h3 {
+          color: $white_color;
+          margin-bottom: 30px;
+        }
+        .content_1 {
+          margin-bottom: 70px !important;
+
+          div {
+            color: $white_color !important;
+            margin-bottom: 30px;
+            font-size: large;
+            i {
+              margin-right: 8px;
+            }
+          }
+
+          .gray {
+            color: $gray_color !important;
+            margin-bottom: 40px;
+            span {
+              font-size: 65px;
+              color: $white_color !important;
+            }
+          }
+        }
+      }
+      .price_box2 {
+        h3 {
+          color: $black_color !important;
+          margin-bottom: 30px;
+          font-weight: bolder;
+        }
+        .content_1 {
+          margin-bottom: 30px !important;
+          div {
+            color: $black_color !important;
+            margin-bottom: 30px;
+            font-size: large;
+            i {
+              margin-right: 8px;
+              color: $green_color;
+            }
+            span {
+              font-size: 65px;
+              color: $black_color !important;
+              font-weight: bolder;
+            }
+          }
+          .price_button2 {
+            background-color: $green_color !important;
+            color: $black_color !important;
+            border-radius: 6px;
+            width: 80%;
+            height: 60px;
+            cursor: pointer;
+            margin: 0px auto !important;
+            text-align: center;
+            transition: all 0.5s;
+            font-size: large !important;
+            &:hover {
+              background-color: rgb(13, 80, 13) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(small) {
+  .price_section {
+    height: fit-content;
+    .container {
+      .price {
+        .price_box {
+            h3{text-align: center }
+          width: 100% !important;
+          padding-bottom: 10px;
+          .content_1{
+            div{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+          }
+        }
+        .price_box2 {
+         h3{text-align: center }
+          width: 100% !important;
+          padding-bottom: 10px;
+          .content_1{
+            div{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .price_button2{
+                display: inline-block;
+                margin: 0 auto;
+            }
+          }
+        }
+
+        .price_content {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .price_section {
+    height: fit-content;
+    .container {
+      .price {
+        .price_box {
+          width: 48% !important;
+          padding-bottom: 10px;
+        }
+
+        .price_box2 {
+          width: 48% !important;
+          padding-bottom: 10px;
+        }
+        .price_content {
+          width: 48% !important;
+        }
+      }
+    }
+  }
+}

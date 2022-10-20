@@ -1,0 +1,58 @@
+@use '../_mixins.scss' as *;
+@use '../_variables.scss' as *;
+.carects_section {
+    height: 600px;
+    overflow: hidden;
+    background-color:$gray_color;
+    .container{
+        margin: 0 auto;
+        width: 85%;
+        height: 100%;
+        .carects {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .pic1,.pic2,.pic3 {
+                width: 30%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+@include breakpoints(small){
+    .carects_section{
+        height: fit-content;
+        .container{
+            .carects{
+                .pic1,.pic2,.pic3 {
+                    width: 100%;
+                    margin-bottom: 10px;}}
+        }
+    }
+}
+@include breakpoints(medium){
+    .carects_section{
+        height: fit-content;
+        .container{
+            .carects{
+                .pic1,.pic2,.pic3 {
+                    width: 49%;
+                    margin-bottom: 10px;
+                    
+                }
+            }
+        }
+    }
+}
+@include breakpoints(large){
+    .carects_section{
+        height: fit-content;
+        .container{
+            .carects{
+                .pic1,.pic2,.pic3 {width: 30%;}
+            }
+        }
+    }
+}

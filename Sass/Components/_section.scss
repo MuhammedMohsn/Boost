@@ -1,0 +1,121 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.downolad_section {
+  background-color: rgb(39, 123, 39);
+  height: 600px;
+  margin-top: 20px;
+  .container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    .download {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 140px;
+      h1 {
+        color: $white_color !important;
+        font-weight: bolder;
+      }
+      p {
+        color: $gray_color;
+        font-size: x-large;
+        word-break: break-all;
+      }
+      .download_btns {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .App_store {
+          height: 100% !important;
+          width: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          cursor: pointer;
+          background-color: $black_color;
+          margin-right: 40px;
+          padding-top: 5px;
+          border-radius: 15px;
+          transition: all 0.2s;
+          color: $white_color !important;
+          font-weight: bolder;
+          &:hover {
+            transform: scale(1.2);
+          }
+          .downlad_button_content {
+            height: 100%;
+            width: 70%;
+            flex-wrap: wrap;
+            .two {
+              font-size: x-large;
+            }
+          }
+          .fa-apple {
+            display: inline-block;
+            width: 25%;
+            color: $white_color !important;
+            height: 100% !important;
+            text-align: center;
+          }
+          .fa-google-play {
+            display: inline-block;
+            width: 25%;
+            color: $white_color !important;
+            height: 100% !important;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(small) {
+  .downolad_section {
+    height: fit-content;
+    padding-bottom: 20px;
+    .container {
+      .download {
+        .download_btns {
+          flex-direction: column;
+          .App_store {
+            height: 100% !important;
+            width: 50%;
+            margin: 10px 0;
+            .fa-google-play,
+            .fa-apple {
+              height: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .downolad_section {
+    height: fit-content;
+    padding-bottom: 20px;
+    .container {
+      .download {
+        .download_btns {
+          .App_store {
+            height: 100% !important;
+            width: 30%;
+          }
+          .fa-google-play,
+          .fa-apple {
+            height: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}
